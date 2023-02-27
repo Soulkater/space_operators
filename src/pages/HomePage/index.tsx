@@ -1,36 +1,64 @@
-import {View, Text, StyleSheet } from "react-native";
+import React from 'react';
 import {Link} from "react-router-native";
-import { HomeContent, HomeTitle } from "./style";
+import {ImageBackground } from "react-native";
+import {HomeButtons, HomeContent, HomeHeader, HomeTitle, IdHeader, TextButtons} from "./style";
 
+// fonts
+import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
 
-const Home = () =>
-    <HomeContent>
-        <HomeTitle>Space Operators</HomeTitle>
+// l'image de fond
+const BACKGROUND_IMAGE = require('../../../assets/try.jpg');
 
-        <Link to="/CreateSession">
-            <Text>Créer une partie</Text>
-        </Link>
+const Home = () => {
+    // Pour gérer le chargement de la Google Font 'Russo One'
+    let [fontLoaded] = useFonts({
+        "Russo-One": require("../../../assets/fonts/RussoOne-Regular.ttf")
+    });
 
-        <Link to="/JoinSession">
-            <Text>Rejoindre une partie</Text>
-        </Link>
+    if (!fontLoaded) {
+        return <AppLoading/>;
+    }
 
-        <Link to="/HistorySession">
-            <Text>Historique</Text>
-        </Link>
+    return (
+        <ImageBackground source={BACKGROUND_IMAGE} resizeMode={"contain"}>
 
-        <Link to="/CloseApp">
-            <Text>Quitter</Text>
-        </Link>
-    </HomeContent>
+            <HomeHeader>
+                <IdHeader>ID : ...</IdHeader>
+            </HomeHeader>
+
+            <HomeContent>
+
+                <HomeTitle style={[{fontFamily: "Russo-One"}]}>Space {'\n'} Operators</HomeTitle>
+
+                <Link to="/CreateSession">
+                    <HomeButtons>
+                        <TextButtons style={[{fontFamily: "Russo-One"}]}>Créer une partie</TextButtons>
+                    </HomeButtons>
+                </Link>
+
+                <Link to="/JoinSession">
+                    <HomeButtons>
+                        <TextButtons style={[{fontFamily: "Russo-One"}]}>Rejoindre une partie</TextButtons>
+                    </HomeButtons>
+                </Link>
+
+                <Link to="/HistorySession">
+                    <HomeButtons>
+                        <TextButtons style={[{fontFamily: "Russo-One"}]}>Historique</TextButtons>
+                    </HomeButtons>
+                </Link>
+
+                <Link to="/CloseApp">
+                    <HomeButtons>
+                        <TextButtons style={[{fontFamily: "Russo-One"}]}>Quitter</TextButtons>
+                    </HomeButtons>
+                </Link>
+
+            </HomeContent>
+
+        </ImageBackground>
+    )
+}
 
 export default Home;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
