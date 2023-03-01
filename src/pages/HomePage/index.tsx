@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-native";
 import {ImageBackground } from "react-native";
-import {HomeButtons, HomeContent, HomeHeader, HomeTitle, IdHeader, TextButtons} from "./style";
+import {HomeButtons, HomeContent, HomeTitle, TextButtons} from "./style";
 
 // fonts
 import { useFonts } from "expo-font";
@@ -22,10 +22,6 @@ const Home = () => {
 
     return (
         <ImageBackground source={BACKGROUND_IMAGE} resizeMode={"cover"}>
-
-            <HomeHeader>
-                <IdHeader>ID : ...</IdHeader>
-            </HomeHeader>
 
             <HomeContent>
 
