@@ -1,14 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-native";
 import {ImageBackground } from "react-native";
-import {HomeButtons, HomeContent, HomeHeader, HomeTitle, IdHeader, TextButtons} from "./style";
+import {HomeButtons, HomeContent, HomeTitle, TextButtons} from "./style";
 
 // fonts
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
 // l'image de fond
-const BACKGROUND_IMAGE = require('../../../assets/try.jpg');
+const BACKGROUND_IMAGE = require('../../../assets/fond-ecran-menu.png');
 
 const Home = () => {
     // Pour gérer le chargement de la Google Font 'Russo One'
@@ -21,11 +21,7 @@ const Home = () => {
     }
 
     return (
-        <ImageBackground source={BACKGROUND_IMAGE} resizeMode={"contain"}>
-
-            <HomeHeader>
-                <IdHeader>ID : ...</IdHeader>
-            </HomeHeader>
+        <ImageBackground source={BACKGROUND_IMAGE} resizeMode={"cover"}>
 
             <HomeContent>
 

@@ -7,19 +7,6 @@ export const HomeContent = styled.View`
   justify-content: center;
 `;
 
-export const HomeHeader = styled.View`
-  height: 35px;
-  background: rgba(52, 52, 137, 0.6);
-  backdrop-filter: blur(3.5px);
-  border-radius: 0 0 10px 10px;
-`;
-
-export const IdHeader = styled.Text`
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-`;
-
 export const HomeTitle = styled.Text`
   text-align: center;
   font-size: 30px;
@@ -28,10 +15,6 @@ export const HomeTitle = styled.Text`
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 100px;
 `;
-
-// export const HomeCenterMenu = styled.View`
-//   //height: ;
-// `;
 
 export const HomeButtons = styled.View`
   width: 186px;
