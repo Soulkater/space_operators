@@ -6,6 +6,7 @@ import {HomeButtons, HomeContent, HomeHeader, HomeTitle, IdHeader, TextButtons} 
 // fonts
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
+import {StatusBar} from "expo-status-bar";
 
 // l'image de fond
 const BACKGROUND_IMAGE = require('../../../assets/try.jpg');
@@ -22,10 +23,10 @@ const Home = () => {
 
     return (
         <ImageBackground source={BACKGROUND_IMAGE} resizeMode={"contain"}>
-
-            <HomeHeader>
-                <IdHeader>ID : ...</IdHeader>
-            </HomeHeader>
+            <StatusBar style={"auto"}/>
+            {/*<HomeHeader>*/}
+            {/*    <IdHeader>ID : ...</IdHeader>*/}
+            {/*</HomeHeader>*/}
 
             <HomeContent>
 
